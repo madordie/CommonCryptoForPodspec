@@ -1,0 +1,6 @@
+framework module CC {
+  umbrella header "CC-umbrella.h"
+
+  export *
+  module * { export * }
+}

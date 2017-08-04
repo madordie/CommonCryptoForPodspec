@@ -1,0 +1,25 @@
+{
+  "name": "CC",
+  "version": "0.0.1",
+  "license": {
+    "type": "MIT"
+  },
+  "homepage": "https://www.github.com/madordie",
+  "authors": {
+    "sunjigang": "keith_127@126.com"
+  },
+  "summary": "CC",
+  "platforms": {
+    "ios": "7.0"
+  },
+  "source": {
+    "git": "xx"
+  },
+  "frameworks": "UIKit",
+  "requires_arc": true,
+  "source_files": "podspec/*.swift",
+  "pod_target_xcconfig": {
+    "SWIFT_INCLUDE_PATHS": "$(PODS_ROOT)/CommonCrypto/"
+  },
+  "prepare_command": "mkdir Pods/CommonCrypto\ncat <<-EOF > Pods/CommonCrypto/module.modulemap\n    module CommonCrypto [system] {\n        header \"/usr/include/CommonCrypto/CommonCrypto.h\"\n        export *\n    }\nEOF"
+}
