@@ -14,14 +14,16 @@ s.requires_arc = true
 s.source_files = 'podspec/*.swift'
 
 s.pod_target_xcconfig = { 'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/CommonCrypto/' }
-s.prepare_command     = <<-EOF
-    mkdir Pods/CommonCrypto
-    cat <<-EOF > Pods/CommonCrypto/module.modulemap
-        module CommonCrypto [system] {
-            header "/usr/include/CommonCrypto/CommonCrypto.h"
-            export *
-        }
-    \EOF
+s.prepare_command = <<-EOF
+if [ ! -d Pods/CommonCrypto ]; then
+mkdir -p Pods/CommonCrypto
+cat <<-EOF > Pods/CommonCrypto/module.modulemap
+module CommonCrypto [system] {
+header "/usr/include/CommonCrypto/CommonCrypto.h"
+export *
+}
+\EOF
+fi
 EOF
 
 end
