@@ -21,5 +21,5 @@
   "pod_target_xcconfig": {
     "SWIFT_INCLUDE_PATHS": "$(PODS_ROOT)/CommonCrypto/"
   },
-  "prepare_command": "if [ ! -d Pods/CommonCrypto ]; then\nmkdir -p Pods/CommonCrypto\ncat <<-EOF > Pods/CommonCrypto/module.modulemap\nmodule CommonCrypto [system] {\nheader \"/usr/include/CommonCrypto/CommonCrypto.h\"\nexport *\n}\nEOF\nfi"
+  "prepare_command": "if [ ! -d ./Pods/CommonCrypto ]; then\nmkdir -p ./Pods/CommonCrypto\ncat <<-EOF > ./Pods/CommonCrypto/module.modulemap\nmodule CommonCrypto [system] {\nheader \"/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/include/CommonCrypto/CommonCrypto.h\"\nexport *\n}\nEOF\nfi\necho \"xxx\""
 }

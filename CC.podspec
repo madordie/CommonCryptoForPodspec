@@ -15,11 +15,11 @@ s.source_files = 'podspec/*.swift'
 
 s.pod_target_xcconfig = { 'SWIFT_INCLUDE_PATHS' => '$(PODS_ROOT)/CommonCrypto/' }
 s.prepare_command = <<-EOF
-if [ ! -d Pods/CommonCrypto ]; then
-mkdir -p Pods/CommonCrypto
-cat <<-EOF > Pods/CommonCrypto/module.modulemap
+if [ ! -d ./Pods/CommonCrypto ]; then
+mkdir -p ./Pods/CommonCrypto
+cat <<-EOF > ./Pods/CommonCrypto/module.modulemap
 module CommonCrypto [system] {
-header "/usr/include/CommonCrypto/CommonCrypto.h"
+header "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS.sdk/usr/include/CommonCrypto/CommonCrypto.h"
 export *
 }
 \EOF
